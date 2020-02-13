@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Students Registration</title>
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="card text-center">
+        <h4 class="card card-header">
+          WARNING
+        </h4>
+        <div class="card-body">
+          <p class="card-text">
+            Are you sure all the details inputed are correct?
+          </p>
+          <form id="form-1">
+            <button class="btn btn-info" type="submit">YES</button>
+            <button class="btn btn-danger" type="button" id="NO">NO</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <% if(det[0] == null){ %>
+    <header>
+      <div class="container">
+        <h1>NO CBT AVAILABLE</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="middle">
+        </div>
+        <div class="card p-3">
+          <h4 class="card-header head text-center">
+            CBT NOT AVAILABLE
+          </h4>
+          <p class="paragraph text-center">
+            Wait for the examiner to start the CBT.
+          </p>
+          <button class="btn btn-info refresh">
+            REFRESH PAGE
+          </button>
+        </div>
+      </div>
+    </div>
+    <% }else{ %>
+      <div class="body">
+    <header>
+      <div class="container">
+        <h1><%=det[0].TyEx %></h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="auto-fit">
+        <div class="box">
+        <div class="card mt-3">
+          <h4 class="card-header">
+            <%=det[0].TyEx %> DETAILS
+          </h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              COURSE NAME:
+              <div class="badge badge-dark"><%=det[0].courseName %></div>
+            </li>
+            <li class="list-group-item">
+              COURSE CODE:
+              <div class="badge badge-dark"><%=det[0].courseCode %></div>
+            </li>
+            <li class="list-group-item">
+              Lecturer:
+              <div class="badge badge-dark"><%=det[0].lectName %></div>
+            </li>
+            <li class="list-group-item">
+              Time:
+              <div class="badge badge-dark"><%=det[0].time %>mins</div>
+            </li>
+            <li class="list-group-item">
+              Number of questions:
+              <div class="badge badge-dark"><%=det[0].noq %></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="box"> 
+        <div class="card mt-3">
+          <h4 class="card-header">STUDENT REGISTRATION</h4>
+          <div class="card-body">
+            <form id="form-2">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="btn btn-dark">
+                      <strong>First Name:</strong>
+                    </div>
+                  </div>
+                  <input type="text" id="first-name" class="form-control" required/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="btn btn-dark">
+                      <strong>Last Name:</strong>
+                    </div>
+                  </div>
+                  <input type="text" id="last-name" class="form-control" required/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="btn btn-dark">
+                      <strong>Matric no.:</strong>
+                    </div>
+                  </div>
+                  <input type="text" id="matric-number" class="form-control" required/>
+                </div>
+              </div>
+              <div class="form-group">
+              <div id="error" class="alert alert-danger">
+              </div>
+            </div>
+                <button
+                  class="btn-success form-control"
+                  id="btnSub"
+                  type="submit"
+                >
+                  Begin <%=det[0].TyEx %>
+                </button>
+              </div>
+            </form>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% } %>
+    <script src="/assets/jquery.js"></script>
+    <script src="/assets/students.js"></script>
+  </body>
+</html>

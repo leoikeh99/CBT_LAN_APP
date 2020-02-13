@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lecturer Portal</title>
+  </head>
+  
+  <body >
+    <div class="overlay">
+      <div class="card text-center">
+        <h4 class="card card-header">
+          WARNING
+        </h4>
+        <div class="card-body">
+          <p class="card-text">
+            Are you sure all the details inputed are correct?
+          </p>
+          <form id="form-1">
+            <button class="btn btn-info" type="submit">YES</button>
+            <button class="btn btn-danger" type="button" id="NO">NO</button>
+          </form>
+        </div>
+      </div>
+    </div>
+   <div class="body">
+    <header>
+      <div class="container">
+        <h1>SET DETAILS</h1>
+      </div>
+    </header>
+    <section class="section-one">
+      <div class="container">
+        <div class="course-det">
+          <h3>COURSE DETAILS</h3>
+          <form id="form-2" >
+            <div class="names">
+              <label>Course Name:</label>
+              <input type="text" id="course-name" required />
+              <label>Course Code:</label>
+              <input type="text" id="course-code" required />
+              <label>Lecurer's Name:</label>
+              <input type="text" id="lect-name" required />
+
+              <h3 class="exam">EXAMINATION DETAILS</h3>
+              <div class="form-group">
+                <div id="error" class="alert alert-danger">
+                </div>
+              </div>
+              <input
+                type="number"
+                id="time"
+                placeholder="Max time limit (mins)"
+                required
+              /> 
+              <input
+                type="number"
+                id="noq"
+                placeholder="Number of questions"
+                required
+              />
+            </div>
+
+            <div class="choose ">
+              <div class="card p-3">
+                <div class="card-header">
+                  <h6>Type of CBT:</h6>
+                </div>
+                <div class="form-group">
+                <label class="form-control">
+                  <input
+                    type="radio"
+                    value="Quiz"
+                    name="exam-type"
+                    id="quiz"
+                    required
+                  />QUIZ/TEST
+                </label>
+              </div><div class="form-group">
+                <label class="form-control" class="form-control">
+                  <input
+                    type="radio"
+                    value="Mid-Semester"
+                    name="exam-type"
+                    id="mid-sem"
+                    required
+                  />Mid-Semeter Examination
+                </label >
+              </div>
+              <div class="form-group">
+                <label class="form-control"
+                  ><input
+                    type="radio"
+                    value="Examination"
+                    name="exam-type"
+                    value="Final Examination"
+                    id="fin-exam"
+                    required
+                  />Final Examination</label class="form-control"
+                >
+              </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-rad mt-3" id="btnSub">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="space"></div>
+  </div>
+    <script src="/assets/jquery.js"></script>
+    <script src="/assets/ajax.js"></script>
+    
+  </body>
+</html>

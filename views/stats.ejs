@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Student Stats</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Student Results</h1>
+      </div>
+    </header>
+    <% if(count == 0){ %>
+    <div class="container">
+      <h3 class="font-weight-light mt-3">Result Table</h3>
+      <table class="table mt-3">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Matric Number</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th colspan="5">
+              <h4 class="text-muted">No Student has submitted yet.</h4>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-outline-secondary refresh">Refresh Page</button>
+    </div>
+    <% }else{ %>
+    <section>
+      <div class="container">
+        <h3 class="font-weight-light mt-3">Result Table</h3>
+        <table class="table table-striped mt-3">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>Matric Number</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0;i< count ;i++){ %>
+            <tr>
+              <th scope="row"><%= i+1 %></th>
+              <td><%= data[i].Lname %></td>
+              <td><%= data[i].Fname %></td>
+              <td><%= data[i].matricNumber %></td>
+              <td><%= data[i].score %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <div class="buttons d-inline">
+          <button class="btn btn-success mb-5" id="downloadBtn">
+            Download this data
+          </button>
+          <button class="btn btn-outline-secondary refresh mb-5">
+            Refresh Page
+          </button>
+        </div>
+        <h3 class="font-weight-light">STATS</h3>
+        <div class="card mb-5">
+          <card-body>
+            <h2 class="card-text font-weight-dark p-3"><%= avg %></h2>
+          </card-body>
+          <div class="card-footer">
+            Average score
+          </div>
+        </div>
+        
+        <div class="card mb-5">
+          <card-body>
+            <h2 class="card-text font-weight-dark p-3">
+              <%= SortedData[0].score %>
+            </h2>
+          </card-body>
+          <div class="card-footer">
+            Highest score
+          </div>
+        </div>
+
+        <div class="card mb-5">
+          <card-body>
+            <h2 class="card-text font-weight-dark p-3">
+              <%= SortedData[count-1].score %>
+            </h2>
+          </card-body>
+          <div class="card-footer">
+            Lowest Score
+          </div>
+        </div>
+        <% if(count>5 ){ %>
+        <div class="card mb-5">
+          <card-body>
+            <table class="table table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th> </th>
+                  <th>Last Name</th>
+                  <th>First Name</th>
+                  <th>Matric Number</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0;i<5 ;i++){ %>
+                <tr>
+                  <th scope="row"><li style="list-style-type:  disc;"></li></th>
+                  <td><%= SortedData[i].Lname %></td>
+                  <td><%= SortedData[i].Fname %></td>
+                  <td><%= SortedData[i].matricNumber %></td>
+                  <td><%= SortedData[i].score %></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </card-body>
+          <div class="card-footer">
+            <strong>Highest five students</strong>
+          </div>
+        </div>
+
+        <div class="card mb-5">
+          <card-body>
+            <table class="table table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th> </th>
+                  <th>Last Name</th>
+                  <th>First Name</th>
+                  <th>Matric Number</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=count-5;i<count ;i++){ %>
+                <tr>
+                  <th scope="row"><li style="list-style-type:  disc;"></li></th>
+                  <td><%= SortedData[i].Lname %></td>
+                  <td><%= SortedData[i].Fname %></td>
+                  <td><%= SortedData[i].matricNumber %></td>
+                  <td><%= SortedData[i].score %></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </card-body>
+          <div class="card-footer">
+            <strong>Lowest five students</strong> 
+          </div>
+        </div>
+         
+      </div>
+      <% }else{ %>
+      <% } %>
+    </section>
+    <% } %>
+
+    <script src="/assets/jquery.js"></script>
+    <script>
+      var downloadBtn = $("#downloadBtn");
+       var reloadBtn = $(".refresh");
+
+      downloadBtn.on("click", function() {
+        window.open("/resultsData");
+      });
+       
+      reloadBtn.on("click", function() {
+        window.location.reload(true);
+      });
+    </script>
+  </body>
+</html>

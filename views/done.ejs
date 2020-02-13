@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Finished</title>
+  </head>
+  <body>
+    <% if(data.writtenTwice === "Yes"){ %>
+    <header>DONE</header>
+    <div class="container">
+      <div class="alert alert-danger mt-5">
+        <strong
+          >!! Student with matric number: <%= data.matric[0] %><%=
+          data.matric[1] %>/<%= data.matric[2] %><%= data.matric[3] %><%=
+          data.matric[4] %><%= data.matric[5] %>, has already written this
+          exam</strong
+        >
+      </div>
+    </div>
+    <%}else if(data.punctual == "timeout"){ %>
+    <header>DONE</header>
+
+    <div class="container">
+      <div class="card mt-5">
+        <h4 class="card-header">RESULT</h4>
+        <strong class="mt-2">Pass Score: 75%</strong>
+        <div class="pass-mark mb-2" style="width: 75%;"></div>
+        <div class="your-score"></div>
+        <div class="score-mark mb-3" style="width: 80%;"></div>
+      </div>
+      <div class="details mt-3">
+        <li class="list-group-item list-group-item-action list-group-item-info">
+          Score:
+          <div id="score" class="badge badge-dark"><%= data.score %></div>
+        </li>
+        <li class="list-group-item list-group-item-action list-group-item-info">
+          Number of questions:
+          <div id="NOQ" class="badge badge-dark"><%= data.noq %></div>
+        </li>
+      </div>
+    </div>
+
+    <%} else { %>
+    <header>DONE</header>
+
+    <div class="container">
+      <div class="card mt-5">
+        <h4 class="card-header">RESULT</h4>
+        <strong class="mt-2">Pass Score: 75%</strong>
+        <div class="pass-mark mb-2" style="width: 75%;"></div>
+        <div class="your-score"></div>
+        <div class="score-mark mb-3" style="width: 80%;"></div>
+      </div>
+      <div class="details mt-3">
+        <li class="list-group-item list-group-item-action list-group-item-info">
+          Score:
+          <div id="score" class="badge badge-dark"><%= data.score %></div>
+        </li>
+        <li class="list-group-item list-group-item-action list-group-item-info">
+          Number of questions:
+          <div id="NOQ" class="badge badge-dark"><%= data.noq %></div>
+        </li>
+      </div>
+    </div>
+
+    <%} %>
+    <script src="/assets/jquery.js"></script>
+    <script src="/assets/done.js"></script>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="card text-center">
+        <h4 class="card card-header">
+          WARNING
+        </h4>
+        <div class="card-body">
+          <p class="card-text">
+            End Exam?
+          </p>
+          <form id="form-1">
+            <button class="btn btn-info" type="submit">YES</button>
+            <button class="btn btn-danger" type="button" id="NO">NO</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <header id="header">
+        <div class="container">
+          <h1>EXAMINATION</h1>
+        </div>
+      </header>
+      <% if(det == "preRegistered"){ %>
+      <div class="container">
+        <div class="alert alert-danger mt-5">
+          <strong
+            >!! Student with matric number: <%= matric[0] %><%= matric[1] %>/<%=
+            matric[2] %><%= matric[3] %><%= matric[4] %><%= matric[5] %>, has
+            already registered</strong
+          >
+        </div>
+      </div>
+      <%} else if(det == "preWritten"){ %>
+      <div class="container">
+        <div class="alert alert-danger mt-5">
+          <strong
+            >!! Student with matric number: <%= matric[0] %><%= matric[1] %>/<%=
+            matric[2] %><%= matric[3] %><%= matric[4] %><%= matric[5] %>, has
+            already written this exam</strong
+          >
+        </div>
+      </div>
+      <%} else { %>
+      <div class="container">
+        <div class="card  mt-3">
+          <h4 class="card-header"><%=det[0].TyEx %></h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              COURSE NAME:
+              <div class="badge badge-dark"><%=det[0].courseName %></div>
+            </li>
+            <li class="list-group-item">
+              COURSE CODE:
+              <div class="badge badge-dark"><%=det[0].courseCode %></div>
+            </li>
+            <li class="list-group-item">
+              Number of questions:
+              <div id="NOQ" class="badge badge-dark"><%=det[0].noq %></div>
+            </li>
+            <li class="list-group-item">
+              TIME:
+              <div class="badge badge-dark form-inline">
+                <div id="TIME" class="badge badge-dark"><%=det[0].time %></div>
+                <div class="badge badge-dark">mins</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-inline">
+                NAME:
+                <div id="fname" class="fname badge badge-dark">
+                  <%= Fname %>
+                </div>
+                <div id="lname" class="lname badge badge-dark">
+                  <%= Lname %>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              Matric Number:
+              <div id="matric" class="badge badge-dark">
+                <%= matric[0] %><%= matric[1] %>/<%= matric[2] %><%= matric[3]
+                %><%= matric[4] %><%= matric[5] %>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <main>
+        <div class="container">
+          <div class="text-center card  mt-3 mb-3">
+            <div class="countDown card-body">
+              Time remaining: <%=det[0].time %> mins
+            </div>
+          </div>
+          <div class="list-group mb-2">
+            <p
+              class="list-group-item list-group-item-action list-group-item-warning"
+            >
+              Restrain from refreshing this page or your exam will be ended
+            </p>
+          </div>
+          <form id="form-2">
+            <% for(i=1; i<(det[0].noq)+1; i++){ %>
+            <div class="question<%= i %>">
+              <div class="card  ">
+                <h4 class="card-header">Question <%= i %></h4>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <h6 id="head" class="card-subtitle">
+                      <%= data[i-1].Question %>
+                    </h6>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-inline">
+                      <input
+                        type="radio"
+                        id="Q<%= i %>-OptOne"
+                        name="Q<%= i %>"
+                      />
+                      <p for=""><%= data[i-1].OptionOne %></p>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-inline">
+                      <input type="radio" id="Q<%= i %>-OptTwo" name="Q<%= i
+                      %>"" />
+                      <p for=""><%= data[i-1].OptionTwo %></p>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-inline">
+                      <input
+                        type="radio"
+                        id="Q<%= i %>-OptThree"
+                        name="Q<%= i
+                      %>"
+                      />
+                      <p for=""><%= data[i-1].OptionThree %></p>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-inline">
+                      <input
+                        type="radio"
+                        id="Q<%= i %>-OptFour"
+                        name="Q<%= i %>"
+                      />
+                      <p for=""><%= data[i-1].OptionFour %></p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <% } %>
+            <button class="btn btn-primary mt-2 mb-3" id="prev" type="button">
+              PREVIOUS
+            </button>
+            <button class="btn btn-primary mt-2 mb-3" id="next" type="button">
+              NEXT
+            </button>
+            <button
+              class="float-right btn btn-primary mt-2 mb-3"
+              id="btnSub"
+              type="submit"
+            >
+              SUBMIT
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <%}%>
+
+    <script src="/assets/jquery.js"></script>
+    <script src="/assets/exam.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "cbt_lan",
+  "version": "1.0.0",
+  "description": "A LAN based CBT",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "Ikeh Leonard",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13",
+    "nodemon": "^2.0.2"
+  }
+}

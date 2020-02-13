@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SET QUESTIONS</title>
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="card text-center">
+        <h4 class="card card-header">
+          WARNING
+        </h4>
+        <div class="card-body">
+          <p class="card-text">
+            Begin Exam?
+          </p>
+          <form id="form-1">
+            <button class="btn btn-info" type="submit">YES</button>
+            <button class="btn btn-danger" type="button" id="NO">NO</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+    <header>
+      <div class="container">
+        <h1>SET QUESTIONS</h1>
+      </div>
+      
+    </header>
+
+    <section>
+        
+      <div class="qcontainer">
+        <form id="form-2" class="form">
+          <% for(i=1; i<(staticDets[0].noq)+1; i++){ %>
+              <h4>QUESTION <%= i %></h4>
+              <input type="text" id="question<%= i %>text" class="question" placeholder="Input Question" required>
+                
+                  <input id="Q<%= i %>-OptOne" type="radio" value="q1" name="answer<%= i %>" class="custom-radio"  required/><input
+                    type="text"
+                    id="A<%= i %>"
+                    required
+                    placeholder="Input option A"
+                  />
+                  <br />
+                  <input id="Q<%= i %>-OptTwo" type="radio" value="q2" name="answer<%= i %>" class="custom-radio" required/><input
+                    type="text"
+                    id="B<%= i %>"
+                    required
+                    placeholder="Input option B"
+                  />
+                  <br />
+                  <input id="Q<%= i %>-OptThree" type="radio" value="q3" name="answer<%= i %>" class="custom-radio" required/><input
+                    type="text"
+                    id="C<%= i %>"
+                    required
+                    placeholder="Input option C"
+                  />
+                  <br />
+                  <input id="Q<%= i %>-OptFour" type="radio" value="<%= i %>" name="answer<%= i %>" class="custom-radio" required/><input
+                    type="text"
+                    id="D<%= i %>"
+                    required
+                    placeholder="Input option D"
+                  />      
+
+              <%}%>
+            <button class="btnSub btn-rad" type="submit">SUBMIT</button>
+        </form>
+        
+    </section>
+  </div>
+    <script src="/assets/jquery.js"></script>
+    
+    <script src="/assets/questions.js"></script>
+  </body>
+</html>

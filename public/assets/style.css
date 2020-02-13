@@ -1,0 +1,164 @@
+header {
+  background-color: #2c3e50;
+  padding: 10px;
+  color: #fff;
+}
+.names input {
+  display: block;
+  padding: 5px;
+  width: 80%;
+  border: 1px #999 solid;
+  border-radius: 10px;
+}
+.qcontainer {
+  width: 80%;
+  margin: auto;
+}
+#att,
+#time,
+#noq {
+  margin: 10px 0px;
+  width: 55%;
+}
+.course-det {
+  margin: 50px 0px;
+  padding: 25px;
+  background-color: #f2f4f4;
+}
+label {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.exam {
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+.course-det button {
+  margin-top: 25px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.btn-rad,
+.prev-data button {
+  border: 0px solid;
+  border-radius: 6px;
+  color: #fff;
+  background-color: #2c3e50;
+}
+.btn-rad:hover,
+.prev-data button:hover {
+  background-color: #1c2833;
+}
+ul {
+  padding: 0px;
+}
+.prev:nth-child(odd) {
+  background-color: #333;
+  color: #fff;
+}
+.prev {
+  font-weight: bold;
+  list-style: none;
+  padding: 10px;
+  border: 0px solid;
+  color: #000;
+  background-color: #f2f4f4;
+}
+.prev-data {
+  padding: 25px;
+  background-color: #f2f4f4;
+}
+.prev-data h4 {
+  margin-bottom: 15px;
+}
+.prev-data table {
+  width: 100%;
+}
+
+.space {
+  margin-top: 50px;
+}
+
+.choose input {
+  margin: 0px 5px;
+}
+.prev td {
+  padding: 0px 10px;
+}
+.prev td:first-child {
+  width: 50%;
+}
+.form {
+  padding: 15px;
+  background-color: #f4f4f4;
+  margin: 40px 0px;
+  border-radius: 5px;
+}
+.form .question {
+  display: block;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 13px;
+  margin: 9px 0px;
+  width: 80%;
+}
+.form input {
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 13px;
+  margin: 4px 0px;
+}
+.form h4 {
+  margin-top: 40px;
+}
+.form .btnSub {
+  display: block;
+  margin-top: 30px;
+  padding: 10px;
+}
+.middle {
+  margin-top: 100px;
+}
+.box {
+  width: 95%;
+}
+.auto-fit {
+  padding: 50px 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-between;
+}
+.form-inline p {
+  padding: 0;
+  margin: 0;
+}
+
+.full {
+  width: 30px;
+}
+.overlay {
+  width: 70vw;
+  height: 40vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: none;
+}
+.countDown {
+  font-size: 1.5rem;
+}
+.pass-mark {
+  color: #000;
+  padding: 10px 1px;
+  margin-bottom: 15px 0px;
+  background-color: #229954;
+}
+.dark-background {
+  background-color: #3d3d3d;
+  padding: 5px;
+  border-radius: 5px;
+}
