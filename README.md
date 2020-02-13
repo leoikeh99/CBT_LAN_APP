@@ -1,6 +1,6 @@
 # An Express.js CBT LAN APP
 
-An application that allows you to serve computer based tests/exams on a local area network
+An application that allows you to serve computer based tests/exams via local area network
 
 **Software needed:**
 
